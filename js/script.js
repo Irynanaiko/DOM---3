@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 green.classList.add("green");
                 red.classList.remove("red");
                 yellow.classList.remove("yellow");
+                clickTimes = 0;
                 break;
         }
     }
@@ -39,55 +40,4 @@ window.addEventListener("DOMContentLoaded", () => {
             item.classList.remove("first");
         });
     }
-
-    // btn.addEventListener('click', (lights) => {
-    //     for (let i = 0; i < lights; i++) {
-    //         switch (lights) {
-    //             case 0:
-    //                 red.classList.add("red");
-    //                 yellow.classList.remove("yellow");
-    //                 green.classList.remove("green");
-    //                 break;
-
-    //             default:
-    //                 break;
-    //         }
-    //     }
-    // });
-
-    // red.addEventListener("click", showRed);
-
-    // function showRed() {
-    //     red.classList.add("red");
-    //     yellow.classList.remove("yellow");
-    //     green.classList.remove("green");
-
-    //     lights.forEach((item) => {
-    //         item.classList.remove("first");
-    //     });
-    // }
-
-    // yellow.addEventListener("click", showYellow);
-
-    // function showYellow() {
-    //     yellow.classList.add("yellow");
-    //     red.classList.remove("red");
-    //     green.classList.remove("green");
-
-    //     lights.forEach((item) => {
-    //         item.classList.remove("first");
-    //     });
-    // }
-
-    // green.addEventListener("click", showGreen);
-
-    // function showGreen() {
-    //     green.classList.add("green");
-    //     red.classList.remove("red");
-    //     yellow.classList.remove("yellow");
-
-    //     lights.forEach((item) => {
-    //         item.classList.remove("first");
-    //     });
-    // }
 });
