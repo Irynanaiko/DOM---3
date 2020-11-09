@@ -5,39 +5,89 @@ window.addEventListener("DOMContentLoaded", () => {
         yellow = document.getElementById("yellow"),
         green = document.getElementById("green");
 
-    red.addEventListener("click", showRed);
+    btn.addEventListener("click", switchAll);
 
-    function showRed() {
-        red.classList.add("red");
-        yellow.classList.remove("yellow");
-        green.classList.remove("green");
+    let clickTimes = 0;
 
+    function switchAll() {
+        clickTimes++;
+        switch (clickTimes) {
+            case 1:
+                red.classList.add("red");
+                yellow.classList.remove("yellow");
+                green.classList.remove("green");
+
+                clearLights();
+                break;
+            case 2:
+                clearLights();
+                yellow.classList.add("yellow");
+                red.classList.remove("red");
+                green.classList.remove("green");
+                break;
+            case 3:
+                clearLights();
+                green.classList.add("green");
+                red.classList.remove("red");
+                yellow.classList.remove("yellow");
+                break;
+        }
+    }
+
+    function clearLights() {
         lights.forEach((item) => {
             item.classList.remove("first");
         });
     }
 
-    yellow.addEventListener("click", showYellow);
+    // btn.addEventListener('click', (lights) => {
+    //     for (let i = 0; i < lights; i++) {
+    //         switch (lights) {
+    //             case 0:
+    //                 red.classList.add("red");
+    //                 yellow.classList.remove("yellow");
+    //                 green.classList.remove("green");
+    //                 break;
 
-    function showYellow() {
-        yellow.classList.add("yellow");
-        red.classList.remove("red");
-        green.classList.remove("green");
+    //             default:
+    //                 break;
+    //         }
+    //     }
+    // });
 
-        lights.forEach((item) => {
-            item.classList.remove("first");
-        });
-    }
+    // red.addEventListener("click", showRed);
 
-    green.addEventListener("click", showGreen);
+    // function showRed() {
+    //     red.classList.add("red");
+    //     yellow.classList.remove("yellow");
+    //     green.classList.remove("green");
 
-    function showGreen() {
-        green.classList.add("green");
-        red.classList.remove("red");
-        yellow.classList.remove("yellow");
+    //     lights.forEach((item) => {
+    //         item.classList.remove("first");
+    //     });
+    // }
 
-        lights.forEach((item) => {
-            item.classList.remove("first");
-        });
-    }
+    // yellow.addEventListener("click", showYellow);
+
+    // function showYellow() {
+    //     yellow.classList.add("yellow");
+    //     red.classList.remove("red");
+    //     green.classList.remove("green");
+
+    //     lights.forEach((item) => {
+    //         item.classList.remove("first");
+    //     });
+    // }
+
+    // green.addEventListener("click", showGreen);
+
+    // function showGreen() {
+    //     green.classList.add("green");
+    //     red.classList.remove("red");
+    //     yellow.classList.remove("yellow");
+
+    //     lights.forEach((item) => {
+    //         item.classList.remove("first");
+    //     });
+    // }
 });
